@@ -69,7 +69,7 @@ with left_column:
     st.subheader("Total Deaths 💀")
     st.subheader(f" {total_deaths}")
 with middle_column:
-    st.subheader("Median Age Abroad 👦")
+    st.subheader("Median Age Aboard 👦")
     st.subheader(f" {median_age}")
 with right_column:
     st.subheader("Total Survivals 👫")
@@ -93,7 +93,7 @@ box_plot.update_layout(
 left_column.plotly_chart(box_plot, use_container_width = True)
 
 pie_chart = px.pie(names = df_selection["Embarked"].unique(), 
-    values = df.groupby("Embarked")["Embarked"].count(), 
+    values = df_selection.groupby("Embarked")["Embarked"].count(), 
     hole = 0.5,
     title="<b>Embarked</b>"
 )
@@ -109,7 +109,7 @@ group_plot = px.histogram(df_selection,
 
 # Using update_layout method to give the manual xlabels and ylabels
 group_plot.update_layout(
-    xaxis_title_text = "Sex",
+    xaxis_title_text = "Survived",
     yaxis_title_text = "Frequency"
 )
 
